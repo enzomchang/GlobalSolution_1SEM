@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-7mGKDfuorJW7WpLwtykEqz+0My9BLgRbAR5AgKmi0tPGEEGJKdbITPe4u2zyHtqM" crossorigin="anonymous">
+    <title>Controle de Água</title>
+</head>
+<body>
+    <h2>Controle de Água</h2>
+
+    <div class="container">
+    <h4>Gasto Total de Água</h4>
+    
+    <h1 id="balance" class="balance">Litros 0.00</h1>
+
+    <div class="inc-exp-container">
+        <div>
+        <h4>Residencial</h4>
+        <p id="money-plus" class="money plus">+ R$0.00</p>
+        </div>
+
+        <div>
+        <h4>Comercial</h4>
+        <p id="money-minus" class="money minus">- R$0.00</p>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Digite sua busca">
+        <button id="searchButton" onclick="filterTransactions()"><i class="fas fa-search"></i></button>
+    </div>
+
+    <h3>Transações</h3>
+    
+    <ul id="transactions" class="transactions"></ul>
+
+    <h3>Adicionar transação</h3>
+
+    <form>
+        <label for="residencial">
+        <input type="radio" id="residencial" name="tipo" value="residencial">
+        Residencial
+        </label>
+        <br>
+        <label for="comercial">
+        <input type="radio" id="comercial" name="tipo" value="comercial">
+        Comercial
+        </label>
+        <br>
+    </form>
+    
+    <form id="form">
+        <div class="form-control">
+        <label for="text">Mês</label>
+        <input autofocus type="text" id="text" placeholder="Mês da Conta"/>
+        </div>
+
+        <div class="form-control">
+            <label for="amount">Gasto em M³</label>
+            <input autofocus type="number" id="liters" placeholder="Valor em M³" />
+            </div>
+
+        <div class="form-control">
+        <label for="amount">Valor da Conta <br />
+            <small>(Valor pago em Reais na conta de Água)</small>
+        </label>
+        <input type="number" id="amount" placeholder="R$" />
+        </div>
+
+        <button class="btn">Adicionar</button>
+    </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
